@@ -4,16 +4,12 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 /**
- * Created by Iron Giants on 2/10/2016.
- * Public Relations is the best :)
- * GitHub-ed as of 2-13-16
- * 
- * An proton goes to the doctor
- * "Doctor I think I am sick"
- * "Are you sure?"
- * "I'm positive"
+ * Created by Iron Giants 7452 on 2/10/2016.
+ * Whenever I heard Oxygen and Magnesium were going out I was like OMg
+ * Personally I was like, NaBrO
+ * HeHe how CuTe
  */
-public class IronGiantsAutoRed extends LinearOpMode {
+public class IronGiantsAutoBlue extends LinearOpMode {
 
     DcMotor leftdrive;
     DcMotor rightdrive;
@@ -22,15 +18,17 @@ public class IronGiantsAutoRed extends LinearOpMode {
 
     @Override
     public void runOpMode() throws InterruptedException {
+
         leftdrive = hardwareMap.dcMotor.get("left_drive");
         rightdrive = hardwareMap.dcMotor.get("right_drive");
         armbase = hardwareMap.dcMotor.get("armbase");
         armextension = hardwareMap.dcMotor.get("armextend");
 
         rightdrive.setDirection(DcMotor.Direction.REVERSE);
-        armbase.setDirection(DcMotor.Direction.REVERSE);
 
-        for (int i = 0; i < 1; i++){
+        waitForStart();
+
+        for (int i = 0; i < 1; i++) {
 
             armbase.setPower(1.0);
             sleep(1500);
@@ -42,8 +40,8 @@ public class IronGiantsAutoRed extends LinearOpMode {
             rightdrive.setPower(0);
             leftdrive.setPower(0);
 
-            rightdrive.setPower(-1);
-            leftdrive.setPower(1);
+            rightdrive.setPower(1);
+            leftdrive.setPower(-1);
             sleep(525);
             rightdrive.setPower(0);
             leftdrive.setPower(0);
@@ -54,8 +52,8 @@ public class IronGiantsAutoRed extends LinearOpMode {
             rightdrive.setPower(0);
             leftdrive.setPower(0);
 
-            rightdrive.setPower(-1);
-            leftdrive.setPower(1);
+            rightdrive.setPower(1);
+            leftdrive.setPower(-1);
             sleep(350);
             rightdrive.setPower(0);
             leftdrive.setPower(0);
@@ -75,5 +73,3 @@ public class IronGiantsAutoRed extends LinearOpMode {
         }
     }
 }
-
-
